@@ -1,0 +1,25 @@
+  <div class="container m-3">
+    <h2>Simple Todo List</h2>
+    <div class="row">
+      <div class="col-4">
+        <h3>Lists</h3>
+        <form class="form-inline mb-2" data-container="new-list-form">
+          <label for="new-list-name" class="sr-only">New list name</label>
+          <input type="text" id="new-list-name" class="form-control mr-2" name="name" data-testid="add-list-input">
+          <input type="submit" class="btn btn-primary" value="Add List" data-testid="add-list-button">
+        </form>
+        <div data-container="lists">
+        </div>
+      </div>
+      <div class="col-4">
+        <h3>Tasks</h3>
+        <form class="form-inline mb-2" data-container="new-task-form">
+          <label for="new-task-name" class="sr-only">New task name</label>
+          <input type="text" id="new-task-name" class="form-control mr-2" name="name" data-testid="add-task-input">
+          <input type="submit" class="btn btn-primary" value="Add Task" data-testid="add-task-button">
+        </form>
+        <div data-container="tasks">
+        </div>
+      </div>
+    </div>
+  </div>
