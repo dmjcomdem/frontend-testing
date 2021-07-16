@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block content
+  .container.mt-3
+    h3 Edit article
+
+    a(href=route('articles')) Back
+
+    form#edit-form.mt-3(action=route('article', { id: article.id}) method="post" data-testid="article-form")
+      .form-group
+        label(for="name") Name
+        input.form-control(id="name" name="article[name]" value= article.name)
+      .form-group
+        label(for="category") Category
+        select.form-control(id="category" name="article[categoryId]")
+          option -----
+          each category in categories
+            - selected = category.id === article.categoryId
+            option(value= category.id selected= selected)= category.name
+      .form-group
+        label(for="content") Content 
+        textarea.form-control(id="content" name="article[content]" rows="7")= article.content
+      .form-group
+        input(type="hidden" name="_method" value="PATCH")
+        input.btn.btn-primary(type="submit" value="Update" data-testid="article-button-submit")

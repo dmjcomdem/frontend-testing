@@ -1,0 +1,26 @@
+extends ../layout.pug
+
+block content
+  .container.mt-3
+    h3 Articles
+
+    a(href=route('newArticle') data-testid="article-create-link") Create new article
+
+    table.table.table-striped.mt-3#articles(data-testid="articles-table")
+      thead
+        tr
+          th Id
+          th Name
+          th Category
+          th Actions
+      tbody
+        each article in articles
+          tr(data-testid="article")
+            td(data-testid="article-id")= article.id
+            td(data-testid="article-name")= article.name
+            td= _.find(categories, ['id', article.categoryId]).name
+            td
+              a(href=route('editArticle', { id: article.id })) Edit
+              form(action=route('article', { id: article.id }) method="post")
+                input(type="hidden" name="_method" value="DELETE")
+                input.btn.btn-link.text-danger.pl-0(type="submit" value="Delete")

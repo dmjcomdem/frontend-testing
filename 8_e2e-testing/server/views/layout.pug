@@ -1,0 +1,18 @@
+doctype html
+html(lang=en)
+  head 
+    title Simple Blog
+    link(href="/assets/css/bootstrap.min.css" rel="stylesheet")
+  body 
+    .container-fluid.bg-light
+      .container
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+          a.navbar-brand(href=route('root')) Simple Blog
+          .collapse.navbar-collapse
+            ul.navbar-nav
+              li.nav-item
+                a.nav-link(
+                    href=route('articles')
+                    data-testid="nav-articles-index-link"
+                  ) Articles
+    block content

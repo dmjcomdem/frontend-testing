@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+block content
+  .container.mt-3
+    h3 Create article
+
+    a(href=route('articles')) Back
+
+    form.mt-3(action=route('articles') method="post" data-testid="article-form")
+      .form-group
+        label(for="name") Name
+        input.form-control(id="name" name="article[name]")
+      .form-group
+        label(for="category") Category
+        select.form-control(id="category" name="article[categoryId]")
+          option -----
+          each category in categories
+            option(value= category.id)= category.name
+      .form-group
+        label(for="content") Content 
+        textarea.form-control(id="content" name="article[content]" rows="7")
+      .form-group
+        input.btn.btn-primary(type="submit" value="Create" data-testid="article-button-submit")
