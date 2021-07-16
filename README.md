@@ -17,3 +17,11 @@
 11. **testing-library-dom** — тестирование приложение **Todo List** c помощью инструментов dom-testing-library и user-event
 12. **react-testing-library** — тестирование React-компонента (поля с автодополнением списка стран)
 13. **testing-library-best-practice** — тестирование записной книжки с помощью React Testing Library
+
+
+## Примеры проектов
+
+[react-todo-application](https://github.com/dmjcomdem/testing-react-todo-application) — пример тестирования todo-list приложения на React
+
+[page-loader](https://github.com/dmjcomdem/page-loader-cli) — пример тестирования простого cli-инструмента на node.js для сохранения веб-страниц
+
